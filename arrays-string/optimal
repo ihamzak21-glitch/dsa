@@ -230,3 +230,46 @@ class Solution {
         return new String(s1);          
     }
 }
+
+//q0
+class Solution {
+    public String reverseWords(String s) {
+
+        StringBuilder ans = new StringBuilder();
+
+        int right = s.length() - 1;
+
+        while (right >= 0) {
+
+            // Skip extra spaces
+            while (right >= 0 && s.charAt(right) == ' ') {
+                right--;
+            }
+
+            // If string had only spaces
+            if (right < 0) {
+                break;
+            }
+
+            // Find the beginning of the word
+            int left = right;
+
+            while (left >= 0 && s.charAt(left) != ' ') {
+                left--;
+            }
+
+            // Append the word
+            ans.append(s.substring(left + 1, right + 1));
+
+            // Add one space if more words remain
+            if (left > 0) {
+                ans.append(" ");
+            }
+
+            // Move right pointer to continue searching
+            right = left - 1;
+        }
+
+        return ans.toString().trim();
+    }
+}
