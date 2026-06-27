@@ -1,0 +1,23 @@
+//q2
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        boolean found = false;
+        int i = 0 ;
+        int j =0;
+        
+        while(i<s.length() && j<t.length()){
+        int first = s.charAt(i);
+        int second =t.charAt(j);
+        if(first == second){
+            i++;
+            j++;
+            found = true;
+        }else{
+            found = false;
+            j++;
+        }
+        }
+        
+     return found;   
+    }
+}
