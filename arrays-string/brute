@@ -18,6 +18,32 @@ class Solution {
     }
 }
 
+//q2
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        boolean found = false;
+        for(int i = 0;i<s.length();i++){
+            for(int j=0;j<t.length();j++){
+                found = false;
+                if(s.charAt(i) == t.charAt(j)){
+                    found = true;
+                    
+            
+                }
+                
+              
+            }
+            if(found == false){
+                    return found;
+                    
+                }
+        }
+        return found;
+        
+    }
+}
+
+
     
         
     
